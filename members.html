@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>メンバー専用ページ</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      if (password === "Seymour-Japan") {
+        document.getElementById("protected-content").style.display = "block";
+        document.getElementById("password-form").style.display = "none";
+      } else {
+        alert("パスワードが違います");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>メンバー専用ページ</h1>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="about.html">私たちについて</a>
+      <a href="activities.html">活動内容</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="members.html">メンバー専用</a>
+    </nav>
+  </header>
+  <main>
+    <div id="password-form">
+      <p>パスワードを入力してください：</p>
+      <input type="password" id="password" />
+      <button onclick="checkPassword()">送信</button>
+    </div>
+    <div id="protected-content" style="display:none;">
+      <h2>内部資料</h2>
+      <ul>
+        <li><a href="#">会議議事録（PDF）</a></li>
+        <li><a href="#">当番表</a></li>
+        <li><a href="#">マニュアル</a></li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Seymour Volunteer Group</p>
+  </footer>
+</body>
+</html>
